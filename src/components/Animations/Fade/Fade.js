@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { css } from 'aphrodite';
 import { styles } from './styles';
 
-const Fade = ({ show, children, duration }) => {
+const Fade = ({ show, children, duration, delay }) => {
     const [ render, setRender ] = useState( show );
     
     useEffect(() => {
@@ -15,11 +15,18 @@ const Fade = ({ show, children, duration }) => {
         }
     }, [ show ]);
 
+    const defaultStyles = {
+        opacity: 0,
+        animationDuration: `${ duration }ms`,
+        animationDelay: `${ delay }ms`,
+        animationFillMode: 'forwards',
+    };
+
     return (
         render && (
             <div
                 className={ css( show ? styles.fadeIn : styles.fadeOut )}
-                style={{ animationDuration: `${ duration }ms` }}
+                style={ defaultStyles }
             >
                 { children }
             </div>
@@ -29,7 +36,8 @@ const Fade = ({ show, children, duration }) => {
 
 Fade.defaultProps = {
     show: true,
-    duration: 300, //in miliseconds
+    duration: 300,
+    delay: 0,
 };
 
 export default Fade;

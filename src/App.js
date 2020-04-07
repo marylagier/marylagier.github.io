@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { css } from 'aphrodite';
 
-import Fade from './components/Fade/Fade';
+import About from './components/About/About';
+import Fade from './components/Animations/Fade/Fade';
+import Header from './components/Header/Header';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 import { styles } from './appStyles';
@@ -21,6 +23,12 @@ function App() {
       <Fade show={ showLoadingScreen } duration={ 300 }>
         <LoadingScreen />
       </Fade>
+      { !showLoadingScreen && (
+        <>
+          <Header />
+          <About />
+        </>
+      ) }
     </div>
   );
 }

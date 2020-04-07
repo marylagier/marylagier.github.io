@@ -15,4 +15,5 @@ export const $spacing = 8;
 export const colors = {
     $lightBlue: '#f0f8ff',
     $rust: '#9d4a36',
+    $darkrust: '#733628',
 };
