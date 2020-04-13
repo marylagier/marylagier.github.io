@@ -4,19 +4,21 @@ import { css } from 'aphrodite';
 import About from './components/About/About';
 import Fade from './components/Animations/Fade/Fade';
 import Header from './components/Header/Header';
+import Intro from './components/Intro/Intro';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+import Social from './components/Social/Social';
 
 import { styles } from './appStyles';
 
 function App() {
-  const [ showLoadingScreen, setShowLoadingScreen ] = useState( true );
+  const [ showLoadingScreen, setShowLoadingScreen ] = useState( false );
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoadingScreen( false );
-    }, 7300);
-    return () => clearTimeout( timer );
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowLoadingScreen( false );
+  //   }, 7300);
+  //   return () => clearTimeout( timer );
+  // }, []);
 
   return (
     <div className={ css( styles.app ) }>
@@ -26,6 +28,8 @@ function App() {
       { !showLoadingScreen && (
         <>
           <Header />
+          <Social />
+          <Intro />
           <About />
         </>
       ) }

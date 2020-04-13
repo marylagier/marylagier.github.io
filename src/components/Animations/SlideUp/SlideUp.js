@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { css } from 'aphrodite';
 import { styles } from './styles';
 
-const SlideRight = ({ show, children, duration, delay }) => {
+const SlideUp = ({ show, children, duration, delay }) => {
     const [ render, setRender ] = useState( show );
     
     useEffect(() => {
@@ -32,10 +32,10 @@ const SlideRight = ({ show, children, duration, delay }) => {
     );
 }
 
-SlideRight.defaultProps = {
+SlideUp.defaultProps = {
     show: true,
     duration: 300,
     delay: 0,
 };
 
-export default SlideRight;
+export default SlideUp;

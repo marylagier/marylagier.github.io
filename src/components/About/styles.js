@@ -1,43 +1,89 @@
 import { StyleSheet } from 'aphrodite';
-import { $serif, $sans, $spacing, colors } from '../../styleConstants';
+import { fontStyles, $spacing, colors } from '../../styleConstants';
 
 export const styles = StyleSheet.create({
-    aboutSection: {
+    about: {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     },
 
-    intro: {
-        fontFamily: $serif,
-        fontStyle: 'italic',
-        fontSize: 16,
+    section: {
+        width: '100%',
+        maxWidth: 800,
+        textAlign: 'right',
+        position: 'relative',
+    },
+
+    titleWrap: {
+        marginBottom: $spacing * 2,
+    },
+
+    title: {
+        ...fontStyles.h2,
+    },
+
+    paragraphWrap: {
+        float: 'right',
+        maxWidth: 600,
+        marginBottom: $spacing * 2,
+    },
+
+    paragraph: {
+        ...fontStyles.p,
+        display: 'inline',
+        backgroundColor: colors.$lightBlue,
+        boxShadow: `-4px 0 0 ${ colors.$lightBlue }`,
+    },
+
+    subheading: {
+        clear: 'both',
+        ...fontStyles.subheading,
         marginBottom: $spacing,
     },
 
-    headlines: {
-        margin: `${ $spacing }px 0px ${ $spacing * 2 }px`,
-        lineHeight: 1.5,
+    technologies: {
+        columnCount: 2,
+        float: 'right',
     },
 
-    headline: {
-        fontFamily: $serif,
-        fontSize: 42,
-        color: colors.$rust,
-        display: 'inline',
+    technology: {
+        fontWeight: 400,
+        whiteSpace: 'nowrap',
+        marginBottom: 8,
+    },
+
+    span: {
         backgroundColor: 'white',
-    },
-
-    subtitle: {
         color: colors.$darkrust,
+        padding: '2px',
     },
 
-    about: {
-        fontFamily: $sans,
-        fontSize: 18,
-        lineHeight: 1.6,
-        marginBottom: $spacing * 3,
-        maxWidth: 500,
-    }
+    text: {
+        position: 'relative',
+        zIndex: 1,
+    },
+
+    imgWrap: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        maxWidth: 250,
+        width: '100%',
+        '::before': {
+            content: '""',
+            display: 'block',
+            position: 'absolute',
+            border: `2px solid ${ colors.$rust }`,
+            width: '100%',
+            height: '100%',
+            top: 20,
+            left: 20,
+        },
+    },
+
+    image: {
+        maxWidth: '100%',
+    },
 });
