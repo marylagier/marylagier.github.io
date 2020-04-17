@@ -18,14 +18,14 @@ import Social from './components/Social/Social';
 import { styles } from './appStyles';
 
 function App() {
-  const [ showLoadingScreen, setShowLoadingScreen ] = useState( false );
+  const [ showLoadingScreen, setShowLoadingScreen ] = useState( true );
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowLoadingScreen( false );
-  //   }, 7300);
-  //   return () => clearTimeout( timer );
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoadingScreen( false );
+    }, 7300);
+    return () => clearTimeout( timer );
+  }, []);
 
   return (
     <Router>
