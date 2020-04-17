@@ -4,17 +4,16 @@ import { css } from 'aphrodite';
 import { styles } from './styles';
 
 const Button = ({
-    onClick,
     children,
     theme,
 }) => {
     return (
-        <button
+        <a
             className={ css( styles.button, styles[ theme ] ) }
-            onClick={ () => onClick() }
+            href='mailto:maryelizabethlagier@gmail.com'
         >
             { children }
-        </button>
+        </a>
     );
 };
 

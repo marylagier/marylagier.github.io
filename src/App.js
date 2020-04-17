@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import { css } from 'aphrodite';
 
 import About from './components/About/About';
+import Experience from './components/Experience/Experience';
 import Fade from './components/Animations/Fade/Fade';
 import Header from './components/Header/Header';
 import Intro from './components/Intro/Intro';
@@ -21,19 +28,22 @@ function App() {
   // }, []);
 
   return (
-    <div className={ css( styles.app ) }>
-      <Fade show={ showLoadingScreen } duration={ 300 }>
-        <LoadingScreen />
-      </Fade>
-      { !showLoadingScreen && (
-        <>
-          <Header />
-          <Social />
-          <Intro />
-          <About />
-        </>
-      ) }
-    </div>
+    <Router>
+      <div className={ css( styles.app ) }>
+        <Fade show={ showLoadingScreen } duration={ 300 }>
+          <LoadingScreen />
+        </Fade>
+        { !showLoadingScreen && (
+          <>
+            <Header />
+            <Social />
+            <Intro />
+            <About />
+            <Experience />
+          </>
+        ) }
+      </div>
+    </Router>
   );
 }
 

@@ -18,3 +18,15 @@ ol,ul {
 b {
   font-weight: 600;
 }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}

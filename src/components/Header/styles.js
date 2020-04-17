@@ -8,8 +8,11 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         position: 'fixed',
+        top: 0,
+        left: 0,
         width: '100%',
         backgroundColor: colors.$lightBlue,
+        zIndex: 10,
     },
 
     logo: {

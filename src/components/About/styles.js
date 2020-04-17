@@ -14,6 +14,15 @@ export const styles = StyleSheet.create({
         maxWidth: 800,
         textAlign: 'right',
         position: 'relative',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(24, 1fr)',
+    },
+
+    text: {
+        gridColumn: '10/-1',
+        gridRow: '1/-1',
+        position: 'relative',
+        zIndex: 1,
     },
 
     titleWrap: {
@@ -60,26 +69,19 @@ export const styles = StyleSheet.create({
         padding: '2px',
     },
 
-    text: {
-        position: 'relative',
-        zIndex: 1,
-    },
-
     imgWrap: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        maxWidth: 250,
-        width: '100%',
+        gridColumn: '1/12',
+        gridRow: '1/-1',
+        position: 'relative',
         '::before': {
             content: '""',
             display: 'block',
             position: 'absolute',
             border: `2px solid ${ colors.$rust }`,
             width: '100%',
-            height: '100%',
-            top: 20,
-            left: 20,
+            paddingBottom: '125%',
+            top: $spacing * 2,
+            left: $spacing * 2,
         },
     },
 
